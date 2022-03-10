@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Formularios</h1>
+    <form
+      action="hacia donde se envian los datos"
+      method="post/get/put/delete"
+      name="formulario"
+      id="formulario"
+    >
+      <div>
+        <!--
+                input
+                text: text
+                password: password
+                email: email
+                number: number
+                date: date
+                month: month
+                week: week
+                time: time
+                datetime: datetime
+                datetime-local: datetime-local
+                search: search
+                tel: tel
+                url: url
+                color: color
+                range: range
+                checkbox: checkbox
+                radio: radio
+                file: file
+                image: image
+                -->
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+      </div>
+      <div>
+        <label for="apellido">Apellido</label>
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          placeholder="Apellido"
+        />
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
