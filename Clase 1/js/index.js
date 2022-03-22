@@ -35,23 +35,66 @@ function getInputValues(selector) {
   }
 }
 
+function createCardMenuBtn(numCard, accion) {
+//   <input type="button" id="btn1Del" class="card-menu-item" value="Del" />
+//   <input type="button" id="btn1Upd" class="card-menu-item" value="Upd" />
+  const menuBtn = document.createElement("input");
+  menuBtn.setAttribute("type", "button");
+  menuBtn.classList.add("card-menu-item");
+  menuBtn.setAttribute("value", accion);
+  menuBtn.addEventListener("click", () => {
+    menuBtn.parentNode.parentNode.parentNode.removeChild(menuBtn.parentNode.parentNode);
+  });cd 
+  return menuBtn;
+}
+
+function createCardMenu(numCard) {
+  // <div class="card-menu">
+  //   <input type="button" id="btn1-del" class="card-menu-item" value="Del" />
+  //   <input type="button" id="btn1-upd" class="card-menu-item" value="Upd" />
+  // </div>
+  const cardMenu = document.createElement("div");
+  cardMenu.classList.add("card-menu");
+  cardMenu.appendChild(createCardMenuBtn(numCard, "X"));
+  cardMenu.appendChild(createCardMenuBtn(numCard, "U"));
+  return cardMenu;
+}
+  
 function createCard(title, body) {
   const cards = getElement(".cards");
+  const numCard = getAll(".card").length+1;
+
+// <div class="card">
   const card = document.createElement("div");
+  card.setAttribute("id", `card${numCard}`);
   card.classList.add("card");
-  const imgDiv = document.createElement("div");
-  imgDiv.classList.add("imgCard");
-  imgDiv.classList.add("hide");
-  imgDiv.innerHTML = `<img src="./imgcard.jpg" alt="">`;
-  card.appendChild(imgDiv);
+// <div class="card-menu">
+//   <input type="button" id="btn1-del" class="card-menu-item" value="Del" />
+//   <input type="button" id="btn1-upd" class="card-menu-item" value="Upd" />
+// </div>
+  card.appendChild(createCardMenu(numCard));
+
+// <img src="./imgcard.jpg" alt="" class="imgCard hide" />
+  // const imgDiv = document.createElement("div");
+  // imgDiv.classList.add("imgCard");
+  // imgDiv.classList.add("hide");
+  // imgDiv.innerHTML = `<img src="./imgcard.jpg" alt="">`;
+  // card.appendChild(imgDiv);
+
+// <div class="card-header">
+//   <h2>Titulo del Post</h2>
+// </div>
   const cardHeader = document.createElement("div");
   cardHeader.classList.add("card-header");
   cardHeader.innerHTML = `<h2>${title}</h2>`;
   card.appendChild(cardHeader);
+
+// <div class="card-body">
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
   cardBody.innerHTML = `<p>${body}</p>`;
   card.appendChild(cardBody);
+
   cards.appendChild(card);
 
   return card;
@@ -61,7 +104,7 @@ function initializeCards() {
   const cards = getAll(".card");
   const imgCards = getAll(".imgCard");
 
-  cards.forEach((card, i) => addClassWhenHover(card, ".imgCard", "show"));
+//  cards.forEach((card, i) => addClassWhenHover(card, ".imgCard", "show"));
 }
 
 function main() {
@@ -73,6 +116,8 @@ function main() {
     const post = createCard(title, body);
     initializeCards();
   });
+  const post = createCard("Titulo del Post", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, doloremque, eaque, eius, eveniet fugiat ipsam");
+  initializeCards();
 }
 
 window.addEventListener("load", main);
