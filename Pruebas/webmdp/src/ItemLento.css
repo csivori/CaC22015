@@ -1,0 +1,13 @@
+
+.contenedor{
+    display: flex;
+    flex-flow: row wrap;
+  
+    border: 1px dashed red;
+  }
+  
+  .contenido{
+    border: 1px dashed blue;
+  }
+
+  p{margin:1px}

@@ -1,0 +1,15 @@
+.ancho05{width: 5%;}
+.ancho10{width: 10%;}
+.ancho20{width: 20%;}
+.ancho40{width: 40%;}
+.ancho100{width: 100%;}
+.anchoFit{width:fit-content;}
+
+.contPadreV{display: flex; flex-flow: column wrap; border: 1px dashed green;}
+.contPadreH{display: flex; flex-flow: row wrap; border: 1px dashed red;}
+
+.contHijoL{border: 1px dashed blue; text-align: start;}
+.contHijoC{border: 1px dashed blue; text-align: center;}
+.contHijoR{border: 1px dashed blue; text-align: end;}
+
+p{margin:1px}

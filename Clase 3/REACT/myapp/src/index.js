@@ -5,6 +5,18 @@ import Contador from './Contador.jsx';
 import Estados from './Estados.jsx';
 import Login from './Login.jsx';
 import reportWebVitals from './reportWebVitals';
+import Efectos from './Efectos';
+import Promesas from './Promesas';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('ejercicio1')
+);
+
+/*
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,17 +41,18 @@ ReactDOM.render(
 
 ReactDOM.render(
   <React.StrictMode>
+    <Efectos />
   </React.StrictMode>,
   document.getElementById('ejercicio4')
 );
 
 ReactDOM.render(
   <React.StrictMode>
+    <Promesas />
   </React.StrictMode>,
   document.getElementById('ejercicio5')
 );
 
-/*
 */
 
 
