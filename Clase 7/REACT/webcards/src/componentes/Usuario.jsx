@@ -1,24 +1,28 @@
-import React from 'react';
+import {useState} from 'react';
 import './Contenedores.css';
 import Address from './Address';
 
-const Usuario = (usr) => {
+const Usuario = (p) => {
+  const usr = JSON.parse(p.usr);
+
+  const [clickUsr, setClickUsr] = useState(false);
+
+  const handlerClickOnUsuario = (usrId) => {
+    setClickUsr(true);
+    console.log(`Clickeó en Usuario ${usrId} y clickUsr vale ${clickUsr}`);
+  };
+
   return (
     <>
-    <div className='contPadreV anchoFit'>
-      <p>Usuario:</p>
-      <p className="contHijoC">{usr.name}</p>
-      <p className="contHijoC">{usr.username} ({usr.id})</p>
-      <p className="contHijoC">{usr.email}</p>
-      <Address street={usr.address.street}
-               suite={usr.address.suite}
-               city={usr.address.city}
-               zipcode={usr.address.zipcode}
-               geo={usr.address.geo}
-      />
-    </div>
+      <button onClick={() => {handlerClickOnUsuario(usr.id)}} className='contPadreV anchoFit boton'>
+        <p>Usuario:</p>
+        <p className="contHijoC">{usr.name}</p>
+        <p className="contHijoC">{usr.username} ({usr.id})</p>
+        <p className="contHijoC">{usr.email}</p>
+        <Address add={JSON.stringify(usr.address)} />
+      </button>
     </>
-  )
+  );
 }
 
-export default Usuario
+export default Usuario;

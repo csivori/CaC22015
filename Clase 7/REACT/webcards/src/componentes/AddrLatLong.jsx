@@ -1,8 +1,8 @@
-import React from 'react';
 import './Contenedores.css';
 
-const AddrLatLong = (geo) => {
-  return (<p className="contHijoC">{geo.id} Lat: {geo.lat} / Long: {geo.lng}</p>)
+const AddrLatLong = (p) => {
+  const geo = JSON.parse(p.geo);
+  return (<p className="contHijoC">Lat: {geo.lat} / Long: {geo.lng}</p>)
 }
 
 export default AddrLatLong;

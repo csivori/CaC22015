@@ -5,11 +5,20 @@
 .ancho100{width: 100%;}
 .anchoFit{width:fit-content;}
 
+.contPadreV{display: flex; flex-flow: column wrap; border: 1px solid black; margin: 10px 10px;}
+.contPadreH{display: flex; flex-flow: row wrap;}
+
+.contHijoL{text-align: start;}
+.contHijoC{text-align: center;}
+.contHijoR{text-align: end;}
+
+p{margin:1px}
+boton{box-shadow: 0 3px 13px 1px rgb(0 0 0 /9%);}
+
+/* 
 .contPadreV{display: flex; flex-flow: column wrap; border: 1px dashed green;}
 .contPadreH{display: flex; flex-flow: row wrap; border: 1px dashed red;}
 
 .contHijoL{border: 1px dashed blue; text-align: start;}
 .contHijoC{border: 1px dashed blue; text-align: center;}
-.contHijoR{border: 1px dashed blue; text-align: end;}
-
-p{margin:1px}
+.contHijoR{border: 1px dashed blue; text-align: end;} */
