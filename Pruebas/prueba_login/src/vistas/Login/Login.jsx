@@ -17,7 +17,7 @@ const Login = () => {
           <input type="text" placeholder="email" name="email" onChange={handleChange} value={formLogin.email} />
           <input type="text" placeholder="pwd" name="pwd" onChange={handleChange} value={formLogin.pwd} />
           <input type="submit" onSubmit={handleSubmit} />
-          <input type="button" onClick={handleCancel} />
+          <input type="button" onClick={handleCancel} value="Cancelar" />
       </div>
     </>
   )
