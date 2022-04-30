@@ -4,7 +4,7 @@ import { types } from '../../types/types';
 import { LoggedUser } from '../../vistas/PaginaPrincipal';
 
 const Login = () => {       
-    const {estado, accionar} = useContext(LoggedUser);
+    const {accionar} = useContext(LoggedUser);
     const [formLogin, setFormLogin] = useState({email:"", pwd:""});
 
     const autenticarUsuario = () => {return (formLogin.email !== "" && formLogin.pwd === "pp") ? 1 : 0}

@@ -1,20 +1,7 @@
-import {Link} from 'react-router-dom';
+import PaginaN from './PaginaN';
 
-function Pagina2({pagBack, pagFwd}) {
+const Pagina2 = ({pagBack, pagFwd}) => {
+  return (<PaginaN numPag="2" pagBack={pagBack} pagFwd={pagFwd} />);
+};
 
-    function handleBtn(pag) {
-      const path = `/${pag}`;
-      return (<Link to={path} className="btn btn-success mx-1">Ir a {pag}</Link>);
-    };
-
-    return (
-      <>
-        <h1>Esta es la Pagina 2</h1>
-        <hr />
-        {handleBtn(pagBack)}
-        {handleBtn(pagFwd)}
-      </>
-    );
-  }
-  
-  export default Pagina2;
+export default Pagina2;
