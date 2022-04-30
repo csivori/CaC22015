@@ -1,5 +1,12 @@
 import React, { useContext, useState } from "react";
 
+/*********************************************************
+ ***                                                   ***
+ ***   NICO: NADA DE ESTE FUENTE SE ESTA UTILIZANDO    ***
+ ***         xq NO ME DOY CUENTA COMO REFACTORIZARLO   ***
+ ***                                                   ***
+ *********************************************************/
+
 const ContextoDelLogin = React.createContext();
 const ContextoDeActualizacionDelLogin = React.createContext();
 
