@@ -1,12 +1,11 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { types } from '../../types/types';
-import { LoggedUser } from '../../vistas/PaginaPrincipal';
+import { authTypes } from './authTypes';
+import { LoggedUser } from './AuthContext';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logo from './salir.png';
 
-
-const Logout = () => {
+const LogoutBtn = () => {
 
   const {estado, accionar} = useContext(LoggedUser);
 
@@ -14,7 +13,7 @@ const Logout = () => {
 
   const handleClick = (ev) => {
     if (estado.isLogged) {
-      accionar({type: types.authTypes.LOGOUT, payload:null});
+      accionar({type: authTypes.LOGOUT, payload:null});
       setTimeout(() => navigate("/", {replace: true}), 0);
     } else {
       alert(`Usuario ${estado.user} aún no esta logueado !!`)
@@ -29,4 +28,4 @@ const Logout = () => {
   )
 }
 
-export default Logout;
+export default LogoutBtn;

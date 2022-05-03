@@ -1,27 +1,33 @@
 import { useContext, useState } from 'react';
+import { authTypes } from './authTypes';
+import { LoggedUser } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { types } from '../../types/types';
-import { LoggedUser } from '../../vistas/PaginaPrincipal';
 
-const Login = () => {       
-    const {accionar} = useContext(LoggedUser);
+const LoginDlg = ({pathIngreso, pathCancela}) => {       
+    const {estado, accionar} = useContext(LoggedUser);
     const [formLogin, setFormLogin] = useState({email:"", pwd:""});
+
+    const navigate = useNavigate();
 
     const autenticarUsuario = () => {return (formLogin.email !== "" && formLogin.pwd === "pp") ? 1 : 0}
 
-    const navigate = useNavigate();
     const handleSubmit = (ev) => {
-
-      const userId = autenticarUsuario(); 
-      if (userId > 0) {
-        accionar({type: types.authTypes.LOGIN, payload:{user: formLogin.email}});
-        setTimeout(() => navigate("/", {replace: true}), 0);
+      const usr = {id: autenticarUsuario(), name: formLogin.email}; 
+      if (usr.id > 0) {
+        console.log("Estado Antes: ", estado);
+        console.log("Usuario autenticado: ", usr);
+        accionar({type: authTypes.LOGIN, payload:{user: usr}});
+        navigate(pathIngreso, {replace: true});
+        // setTimeout(() => navigate(pathIngreso, {replace: true}), 0);
       } else {
         alert(`Usuario ${formLogin.email} Desconocido o Contraseña Incorrecta !!`)
       }
     };
     
-    const handleCancel = (ev) => {console.log("Cliqueó CANCELAR")};
+    const handleCancel = (ev) => {
+      console.log("Canceló");
+      navigate(pathCancela, {replace: true});
+    };
 
     const handleChange = (ev) => {
       setFormLogin({...formLogin, [ev.target.name]: ev.target.value});
@@ -52,7 +58,7 @@ const Login = () => {
           </div>
         {/* </div> */}
       </>
-  )
-};
+    )
+  }
 
-export default Login;
+export default LoginDlg;

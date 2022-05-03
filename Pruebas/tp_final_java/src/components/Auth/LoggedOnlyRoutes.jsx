@@ -1,6 +1,8 @@
 import { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
-import { LoggedUser } from '../vistas/PaginaPrincipal';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { LoggedUser } from './AuthContext';
+
+export const navigate = useNavigate;
 
 const RutasProtegidas = ({children}) => {
 

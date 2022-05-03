@@ -1,4 +1,4 @@
-import {handleBtn, getPageTitle, getPageBgColor} from '../tools/rutinasBase';
+import {handleBtn, getPageTitle, getPageBgColor} from './rutinasBase';
 
 function PaginaN({numPag, pagBack, pagFwd}) {
 

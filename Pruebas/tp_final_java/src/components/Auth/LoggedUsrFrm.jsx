@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { LoggedUser } from '../../vistas/PaginaPrincipal';
-import Logout from '../Login/Logout';
+import { LoggedUser } from './AuthContext';
+import LogoutBtn from './LogoutBtn';
 
-const UsuarioLogueado = () => {
+const LoggedUsrFrm = () => {
   
   let b_am = "border border-3 border-warning";
   let b_az = "border border-3 border-primary";
@@ -18,17 +18,17 @@ const UsuarioLogueado = () => {
         <div className={`row m-0 p-0  ${b_ro}`}>
           <div className={`col-10 p-0 text-end  ${b_am}`}>
             <div className={`row m-0 ${b_az}`}>
-              <p className={`my-0 p-0`}>Usuario: <strong>{estado.user ?? "-"}</strong></p>
+              <p className={`my-0 p-0`}>Usuario: <strong>{(estado.isLogged) ? `(${estado.userId}) ${estado.userName}` : "-"}</strong></p>
             </div>
             <div className={`row m-0 ${b_az}`}>
-              <p className={`my-0 p-0`}>Logueado Desde: <strong>{estado.since ?? "-"}</strong></p>
+              <p className={`my-0 p-0`}>Logueado Desde: <strong>{(estado.loggedSince !== "") ?estado.loggedSince : "-"}</strong></p>
             </div>
             <div className={`row m-0 p-0 ${b_az}`}>
-              <p className={`m-0 p-0`}>Ultimo Login: <strong>{estado.last ?? "-"}</strong></p>
+              <p className={`m-0 p-0`}>Ultimo Login: <strong>{(estado.lastLogged !== "") ? estado.lastLogged : "-"}</strong></p>
             </div>
           </div>
           <div className={`col align-items-top text-center ${b_ve}`}>
-            <span className={`${b_az}`}>{(estado.user !== null) ? <Logout /> : null}</span>
+            <span className={`${b_az}`}>{(estado.userName !== null) ? <LogoutBtn /> : null}</span>
           </div>
         </div>
       </div>
@@ -36,4 +36,4 @@ const UsuarioLogueado = () => {
   )
 };
 
-export default UsuarioLogueado;
+export default LoggedUsrFrm;

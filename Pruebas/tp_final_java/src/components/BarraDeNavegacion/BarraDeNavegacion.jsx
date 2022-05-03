@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import UsuarioLogueado from '../UsuarioLogueado/UsuarioLogueado';
+import LoggedUsrFrm from '../Auth/LoggedUsrFrm';
 
 const BarraDeNavegacion = ({cant}) => {
     
@@ -11,32 +11,23 @@ const BarraDeNavegacion = ({cant}) => {
     for (let i = 1; i <= cant; i++) {arr.push(i)};
     return (
       <header>
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-4 align-self-center text-center"></div>
-            <div class="col-4 align-self-center text-center">
-              <h1><span class="badge bg-secondary">Página Principal</span></h1>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-4 align-self-center text-center"> </div>
+            <div className="col-4 align-self-center text-center">
+              <h1><span className="badge bg-secondary">Página Principal</span></h1>
             </div>
-            <div class="col-4 py-4 align-self-start text-end">
-              <UsuarioLogueado />
+            <div className="col-4 py-4 align-self-start text-end">
+              <LoggedUsrFrm />
             </div>
           </div>
-          <div class="row align-items-center">
+          <div className="row align-items-center">
             <div className="btn-group">
             {arr.map((elem) => {return (<Link key={elem} to={`/Pagina${elem}`} className="btn btn-dark mx-1">Página {elem}</Link>)})}
             </div>
           </div>
         </div>
-
-
-
-
-
-        {/* <h1>Página Principal</h1>
-        <UsuarioLogueado /> */}
-        {/* <div className="btn-group">
-          {arr.map((elem) => {return (<Link key={elem} to={`/Pagina${elem}`} className="btn btn-dark mx-1">Página {elem}</Link>)})}
-        </div> */}
+        <hr />
       </header>
     )
   }
