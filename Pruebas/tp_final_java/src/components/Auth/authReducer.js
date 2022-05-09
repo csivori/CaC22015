@@ -1,13 +1,16 @@
 import { authTypes } from "./authTypes";
 
 export const initAuthReducer = () => {
-  return {
-    userId: null,
-    userName: null, 
-    lastLogged: "",
-    loggedSince: "",
-    isLogged: false
-  };
+// return {
+  return localStorage.getItem("auth") 
+        ? JSON.parse(localStorage.getItem("auth")) 
+        : {
+            userId: null,
+            userName: null, 
+            lastLogged: "",
+            loggedSince: "",
+            isLogged: false
+          };
 };
 
 export const authReducer = (state, action) => {
