@@ -1,0 +1,31 @@
+.botonCS {
+  cursor: pointer;
+
+  letter-spacing: .1px;
+
+  /* outline: none; */
+  /* border: none; */
+  /* border-radius: 2px; */
+  /* box-shadow: 0 0 0 2px #F7F7F7; */
+  /* background-color: transparent; */
+  /* color: #FFF; */
+  transition: all 200ms ease-in-out;
+}
+
+.botonCS:hover {
+  transform: scale(1.2);
+
+  letter-spacing: 1.1px;
+  font-weight: bold;
+
+  /* border-top-left-radius: 16px; 
+   border-bottom-right-radius: 16px; */
+
+  /* background-color: #F7F7F7;
+  color: #A22274; */
+  /* box-shadow: 0 0 0 2px #A22274; */
+}
+
+.botonCS:active {
+  transform: scale(1);
+}

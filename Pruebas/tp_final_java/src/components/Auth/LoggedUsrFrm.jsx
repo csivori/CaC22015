@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { LoggedUser } from './AuthContext';
+import ChangeUsrBtn from './ChangeUsrBtn';
 import LogoutBtn from './LogoutBtn';
 
 const LoggedUsrFrm = () => {
@@ -28,7 +29,7 @@ const LoggedUsrFrm = () => {
             </div>
           </div>
           <div className={`col align-items-top text-center ${b_ve}`}>
-            <span className={`${b_az}`}>{(estado.userName !== null) ? <LogoutBtn /> : null}</span>
+            <span className={`${b_az}`}>{(estado.userName !== null) ? <> <LogoutBtn /><ChangeUsrBtn /> </> : null}</span>
           </div>
         </div>
       </div>

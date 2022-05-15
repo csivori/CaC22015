@@ -4,14 +4,14 @@ import { LoggedUser } from './AuthContext';
 
 export const navigate = useNavigate;
 
-const RutasProtegidas = ({children}) => {
+const RutasProtegidas = ({children, redirect}) => {
 
   const {estado} = useContext(LoggedUser);
   
   if (estado.isLogged) {
       return children;
   } else {
-      return <Navigate to="/Login" replace={true} />;
+      return <Navigate to={redirect ?? "/Login"} replace={true} />;
   }
 };
 

@@ -12,6 +12,7 @@ import Pagina1 from "./vistas/Pagina1";
 import Pagina2 from "./vistas/Pagina2";
 import Pagina3 from "./vistas/Pagina3";
 import Pagina4 from "./vistas/Pagina4";
+import Boton from "./components/Boton/Boton";
 
 // Constantes App
 // LandingPage
@@ -24,6 +25,7 @@ const App = () => {
         <BrowserRouter>
           <div className="container mt-5">
             <BarraDeNavegacion cant='4' />
+            <Boton caption="Es Este" />
             <main>
               <div className="container mt-2">
               <Routes>
@@ -34,7 +36,7 @@ const App = () => {
                     } />
                 <Route path="/Chau" element={<Chau />} />
                 <Route path="*" element={
-                  <LoggedOnlyRoutes>
+                  <LoggedOnlyRoutes redirect="/Login">
                     <Routes>
                       <Route path="/" element={<Navigate to={landingPage} />} />
                       <Route path="/Pagina1" element={<Pagina1 pagBack="Pagina2" pagFwd="Pagina4" />} />

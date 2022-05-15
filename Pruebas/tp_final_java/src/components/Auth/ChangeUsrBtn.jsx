@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { authTypes } from './authTypes';
 import { LoggedUser } from './AuthContext';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import logo from './salir.png';
-import Boton from '../Boton/Boton';
+import logo from './cambioUsr.png';
 
-const LogoutBtn = () => {
+const ChangeUsrBtn = () => {
 
   const {estado, accionar} = useContext(LoggedUser);
 
@@ -22,13 +21,11 @@ const LogoutBtn = () => {
   };
 
   return (
-    // <button className="btn btn-sm" onClick={handleClick}>
-    //   <img src={logo} alt="salir" />
-    // </button>
-    <Boton clasesExtras="btn btn-sm" alClickear={handleClick}>
+    <button type="button" className="btn btn-sm" onClick={handleClick}>
+      {/* <FontAwesomeIcon icon="fa-arrow-right-from-bracket fa-solid fa-regular" /> */}
       <img src={logo} alt="salir" />
-    </Boton>
-)
+    </button>
+  )
 }
 
-export default LogoutBtn;
+export default ChangeUsrBtn;
